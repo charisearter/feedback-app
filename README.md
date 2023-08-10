@@ -12,7 +12,7 @@ This will be the a more interactive component in the main project.
 
 ## Other Information
 
-Placeholder data comes from [React Front to Back](https://www.udemy.com/course/react-front-to-back-2022/) Traversy Media lessons on Udemy
+Placeholder data and CSS comes from [React Front to Back](https://www.udemy.com/course/react-front-to-back-2022/) Traversy Media lessons on Udemy
 ## Authors
 
 - [@charisearter](https://www.github.com/charisearter)
