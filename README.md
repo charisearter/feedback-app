@@ -7,7 +7,8 @@ When complete, I will convert the project to TypeScript.
 This will be the a more interactive component in the main project.
 
 
-
+Uses:
+React Icons
 
 
 ## Other Information
