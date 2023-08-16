@@ -2,9 +2,11 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import Card from './shared/Card';
 import Button from './shared/Button';
+import RatingSelect from './RatingSelect';
 
 function FeedbackForm() {
 	const [text, setText] = useState('');
+	const [rating, setRating] = useState(10);
 	const [btnDisabled, setBtnDisabled] = useState(true);
 	const [message, setMessage] = useState('');
 
@@ -26,7 +28,7 @@ function FeedbackForm() {
 		<Card>
 			<form>
 				<h2>How would you rate this page? </h2>
-				{/* TODO: Rating select component */}
+				<RatingSelect />
 				<div className='input-group'>
 					<input
 						onChange={handleTextChange}
@@ -35,7 +37,7 @@ function FeedbackForm() {
 						value={text}
 					/>
 
-					<Button type='submit' isDisabled={btnDisabled}>
+					<Button type='submit' disabled={btnDisabled}>
 						Send
 					</Button>
 				</div>
