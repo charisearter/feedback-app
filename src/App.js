@@ -14,11 +14,15 @@ const App = () => {
 		}
 	};
 
+	const addFeedback = (newFeedback) => {
+		console.log(newFeedback);
+	};
+
 	return (
 		<Fragment>
 			<Header />
 			<div className='container'>
-				<FeedbackForm />
+				<FeedbackForm handleAdd={addFeedback} />
 				<FeedbackStats feedback={feedback} />
 				<FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
 			</div>

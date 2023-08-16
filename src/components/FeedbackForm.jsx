@@ -1,10 +1,9 @@
-import PropTypes from 'prop-types';
 import { useState } from 'react';
 import Card from './shared/Card';
 import Button from './shared/Button';
 import RatingSelect from './RatingSelect';
 
-function FeedbackForm() {
+function FeedbackForm({ handleAdd }) {
 	const [text, setText] = useState('');
 	const [rating, setRating] = useState(10);
 	const [btnDisabled, setBtnDisabled] = useState(true);
@@ -24,9 +23,25 @@ function FeedbackForm() {
 		setText(e.target.value);
 	};
 
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		// prevent users from working around length constraint
+		if (text.trim().length > 10) {
+			// construct a new object
+			const newFeedback = {
+				text,
+				rating,
+			};
+
+			handleAdd(newFeedback);
+
+			setText('');
+		}
+	};
+
 	return (
 		<Card>
-			<form>
+			<form onSubmit={handleSubmit}>
 				<h2>How would you rate this page? </h2>
 				<RatingSelect select={(rating) => setRating(rating)} />
 				<div className='input-group'>
