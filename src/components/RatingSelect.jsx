@@ -1,10 +1,12 @@
 import { useState } from 'react';
 
-function RatingSelect() {
+function RatingSelect({ select }) {
 	const [selected, setSelected] = useState(10);
 
 	const handleChange = (e) => {
-		setSelected(e.currentTarget.value);
+		// added + to make it typeof number instead of typeof String
+		setSelected(+e.currentTarget.value);
+		select(+e.currentTarget.value);
 	};
 
 	return (
