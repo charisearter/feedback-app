@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-//import { uuid } from 'uuidv4';
+import { v4 as uuidv4 } from 'uuid'
 import Header from './components/Header';
 import FeedbackList from './components/FeedbackList';
 import FeedbackData from './data/FeedbackData';
@@ -16,7 +16,7 @@ const App = () => {
 	};
 
 	const addFeedback = (newFeedback) => {
-		//newFeedback.id = uuid();
+		newFeedback.id = uuidv4();
 		console.log(newFeedback);
 	};
 
